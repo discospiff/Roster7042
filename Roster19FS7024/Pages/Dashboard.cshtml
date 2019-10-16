@@ -1,0 +1,25 @@
+﻿@page
+@model Roster19FS7024.DashboardModel
+@{
+    ViewData["Title"] = "Dashbaord";
+    var shortcuts = (IList<Roster19FS7024.Shortcut>) ViewData["ShortcutList"];
+}
+    <div>
+        <table>
+            <tr><th>First Name</th><th>Last Name</th><th>Shortcut</th><th>Software</th><th>What does it do?</th></tr>
+            @{
+
+                foreach (Roster19FS7024.Shortcut shortcut in shortcuts)
+                {
+                    <tr>
+                        <td>@shortcut.FirstName</td>
+                        <td> @shortcut.LastName </td>
+                        <td>@shortcut.KeyboardShortcut</td>
+                        <td> @shortcut.Software </td>
+                        <td> @shortcut.WhatDo</td>
+                    </tr>
+                }
+
+            }
+        </table>
+     </div>
