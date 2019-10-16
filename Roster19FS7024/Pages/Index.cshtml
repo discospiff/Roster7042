@@ -4,7 +4,14 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <form method="post">
+            <input type="text" name="FirstName" placeholder="First Name" size="40"/>
+            <input type="text" name="LastName" placeholder="Last Name" size="40"/><br/>
+            <input type="text" name="KeyboardShortcut" placeholder="Keyboard Shortcut (keys)" size="40"/><br/>
+            <input type="text" name="Software" placeholder="Where do you use this shortcut (Visual Studio, Windows, Mac, etc.)" size="80"/><br />
+            <input type="text" name="WhatDo" placeholder="What does this shortcut do?" size="120"/><br />
+            <input id="Button1" type="submit" value="Press me" />
+        </form>
+    </div>
