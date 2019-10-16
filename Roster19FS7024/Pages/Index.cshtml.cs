@@ -8,16 +8,13 @@ using Microsoft.Extensions.Logging;
 
 namespace Roster19FS7024.Pages
 {
-    [BindProperties]
+    
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string KeyboardShortcut { get; set; }
-        public string Software { get; set; }
-        public string WhatDo { get; set; }
+        [BindProperty]
+        public Shortcut shortcut { get; set; }
 
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -33,7 +30,9 @@ namespace Roster19FS7024.Pages
         public void OnPost()
         {
             // update the local map.
-            string stuff = FirstName + LastName + KeyboardShortcut + Software + WhatDo;
+            string stuff = shortcut.FirstName + shortcut.LastName + shortcut.KeyboardShortcut + shortcut.Software + shortcut.WhatDo;
+            ShortcutRoster.allShortcuts.Add(shortcut);
+
             Console.WriteLine(stuff);
         }
     }
