@@ -24,16 +24,16 @@ namespace Roster19FS7024.Pages
 
         public void OnGet()
         {
-
+            ViewData["ShortcutList"] = ShortcutRoster.allShortcuts;
         }
 
         public void OnPost()
         {
-            // update the local map.
+            // update the local map. 
             string stuff = shortcut.FirstName + shortcut.LastName + shortcut.KeyboardShortcut + shortcut.Software + shortcut.WhatDo;
             ShortcutRoster.allShortcuts.Add(shortcut);
 
-            Console.WriteLine(stuff);
+            ViewData["ShortcutList"] = ShortcutRoster.allShortcuts;
         }
     }
 }
